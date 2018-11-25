@@ -1,50 +1,34 @@
-Rails Devise Bootstrap
-================
+# Shortlink-API
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+## The Idea
+A Ruby on Rails API to create custom short-links w/ 2FA
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+## Milestones
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
+- v0: Can CRUD basic short-links on root domain
+- v1: Auth + view own links
+- v2: View analytics on links (# clicks, country of origin, etc.)
+- v3: Allow user to send analytics data back to link tracker and view full funnel
+- v4: Integrate with Segment
 
-Problems? Issues?
------------
+## Functional Requirements
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+- [ ] At least one nested route or resource.
+- [ ] The ability to CREATE, READ, UPDATE, and DELETE the object(s) in your API.
+- [ ] At least one of each endpoint: GET, POST, PUT, and DELETE.
+- [ ] A database persistence layer (e.g. MongoDB)
+- [ ] Project contains documentation explaining how to use your API.
+- [ ] Project contains a simple, static single page brochure site that explains what the API does and a link to the API's documentation.
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+## Non-Functional Requirements
 
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+- [ ] The API must be written using the appropriate application of RESTful techniques.
+- [ ] The API implementation must follow the MVC pattern.
+- [ ] The API must be hosted in a public GitHub repository.
+- [ ] The project repository should not expose any secrets!
+- [ ] The API must have a discernible theme or serve a distinct purpose. See the Examples for well-themed and purposed APIs.
+- [ ] The final project must be deployed and fully accessible via the internet and callable via any consumer.
+- [ ] The final project must be fully documented.
 
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.5.3
-- Rails 5.2.1
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+### Credits
+Credit to Daniel Kehoe @ RailsApps for the convenient starter app w/ Devise: https://github.com/RailsApps/rails-devise
