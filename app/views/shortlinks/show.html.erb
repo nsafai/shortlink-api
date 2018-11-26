@@ -8,3 +8,6 @@
   <strong>Long URL:</strong>
   <%= @shortlink.long_url %>
 </p>
+
+<%= link_to 'Edit', edit_shortlink_path(@shortlink) %> |
+<%= link_to 'Back', shortlinks_path %>

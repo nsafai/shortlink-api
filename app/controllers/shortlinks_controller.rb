@@ -11,6 +11,10 @@ class ShortlinksController < ApplicationController
     @shortlink = Shortlink.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     @shortlink = Shortlink.new(shortlink_params)
 
@@ -18,6 +22,16 @@ class ShortlinksController < ApplicationController
       redirect_to @shortlink
     else
       render 'new'
+    end
+  end
+
+  def update
+    @shortlink = Shortlink.find(params[:id])
+
+    if @shortlink.update(shortlink_params)
+      redirect_to @shortlink
+    else
+      render 'edit'
     end
   end
 

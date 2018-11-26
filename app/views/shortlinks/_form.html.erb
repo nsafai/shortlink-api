@@ -1,0 +1,30 @@
+<%= form_with model: @shortlink, local: true do |form| %>
+
+  <% if @shortlink.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@shortlink.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @shortlink.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :short_url %><br>
+    link.me/<%= form.text_field :short_url, placeholder: "custom_url" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :long_url %><br>
+    <%= form.text_field :long_url %>
+  </div>
+
+  <p>
+    <%= form.submit 'Create', :class => 'button center' %>
+  </p>
+<% end %>

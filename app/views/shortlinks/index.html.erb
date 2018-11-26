@@ -15,6 +15,7 @@
       <td><%= shortlink.short_url %></td>
       <td><%= shortlink.long_url %></td>
       <td><%= link_to 'Show', shortlink_path(shortlink) %></td>
+      <td><%= link_to 'Edit', edit_shortlink_path(shortlink) %>
     </tr>
   <% end %>
 </table>
