@@ -1,24 +1,27 @@
+<div class="container">
+  <h1>All Shortlinks</h1>
 
-<h3>All shortlinks</h3>
 
-
-<%= link_to 'New shortlink', new_shortlink_path %>
-<table>
-  <tr>
-    <th>Short URL</th>
-    <th>Long URL</th>
-    <th></th>
-  </tr>
-
-  <% @shortlinks.each do |shortlink| %>
+  <%= link_to 'New shortlink', new_shortlink_path, :class=>"btn btn-primary margin-bot" %><br>
+  <table class="table table-responsive table-hover">
     <tr>
-      <td><%= shortlink.short_url %></td>
-      <td><%= shortlink.long_url %></td>
-      <td><%= link_to 'Show', shortlink_path(shortlink) %></td>
-      <td><%= link_to 'Edit', edit_shortlink_path(shortlink) %>
-      <td><%= link_to 'Delete', shortlink_path(shortlink),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <th>Short URL</th>
+      <th>Long URL</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
-  <% end %>
-</table>
+
+    <% @shortlinks.each do |shortlink| %>
+      <tr>
+        <td><%= shortlink.short_url %></td>
+        <td><a href="<%= shortlink.long_url %>"><%= shortlink.long_url %></a></td>
+        <td><%= link_to 'Show', shortlink_path(shortlink) %></td>
+        <td><%= link_to 'Edit', edit_shortlink_path(shortlink) %></td>
+        <td><%= link_to 'Delete', shortlink_path(shortlink),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+<div>
