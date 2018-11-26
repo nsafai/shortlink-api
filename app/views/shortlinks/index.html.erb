@@ -1,0 +1,20 @@
+
+<h3>All shortlinks</h3>
+
+
+<%= link_to 'New shortlink', new_shortlink_path %>
+<table>
+  <tr>
+    <th>Short URL</th>
+    <th>Long URL</th>
+    <th></th>
+  </tr>
+
+  <% @shortlinks.each do |shortlink| %>
+    <tr>
+      <td><%= shortlink.short_url %></td>
+      <td><%= shortlink.long_url %></td>
+      <td><%= link_to 'Show', shortlink_path(shortlink) %></td>
+    </tr>
+  <% end %>
+</table>

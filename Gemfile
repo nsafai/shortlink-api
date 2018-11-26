@@ -26,11 +26,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'validate_url'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pg'
 gem 'simple_form'
 gem 'unicorn'
+gem 'rails-i18n'
 gem 'unicorn-rails'
 group :development do
   gem 'better_errors'
