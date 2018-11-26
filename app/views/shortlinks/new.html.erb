@@ -3,14 +3,14 @@
 
   <%= form_with scope: :shortlink, url: shortlinks_path, local: true do |form| %>
 
-  <% if @article.errors.any? %>
+  <% if @shortlink.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@article.errors.count, "error") %>
+        <%= pluralize(@shortlink.errors.count, "error") %>
         prohibited this article from being saved:
       </h2>
       <ul>
-        <% @article.errors.full_messages.each do |msg| %>
+        <% @shortlink.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -18,21 +18,22 @@
   <% end %>
 
   <%= form_with scope: :shortlink, url: shortlinks_path, local: true do |form| %>
-  <div class="form-group">
-    <%= form.label :short_url %><br>
-    link.me/<%= form.text_field :short_url, placeholder: "custom_url" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :short_url %><br>
+      link.me/<%= form.text_field :short_url, placeholder: "custom_url" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :long_url %><br>
-    <%= form.text_field :long_url %>
-  </div>
+    <div class="form-group">
+      <%= form.label :long_url %><br>
+      <%= form.text_field :long_url %>
+    </div>
 
-  <p>
-    <%= form.submit 'Create', :class => 'button center' %>
-  </p>
-<% end %>
+    <p>
+      <%= form.submit 'Create', :class => 'button center' %>
+    </p>
+  <% end %>
 
-<%= link_to 'Back', shortlinks_path %>
+  <%= link_to 'Back', shortlinks_path %>
+  <% end %>
 
 </div>
