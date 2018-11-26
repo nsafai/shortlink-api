@@ -1,4 +1,8 @@
 class ShortlinksController < ApplicationController
+  def redir
+    @shortlink = Shortlink.find(params[:short_url])
+  end
+
   def index
     @shortlinks = Shortlink.all
   end
@@ -12,7 +16,7 @@ class ShortlinksController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @shortlink = Shortlink.find(params[:id])
   end
 
   def create
