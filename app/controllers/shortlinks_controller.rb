@@ -1,13 +1,4 @@
 class ShortlinksController < ApplicationController
-  def redir
-    @shortlink = Shortlink.find_by(short_url: params[:short_url])
-
-    if @shortlink
-      redirect_to @shortlink.long_url
-    else
-      render :template =>"/shortlinks/404-link", :status => 404
-    end
-  end
 
   def index
     @shortlinks = Shortlink.all
@@ -50,6 +41,16 @@ class ShortlinksController < ApplicationController
     @shortlink.destroy
 
     redirect_to shortlinks_path
+  end
+
+  def redir
+    @shortlink = Shortlink.find_by(short_url: params[:short_url])
+
+    if @shortlink
+      redirect_to @shortlink.long_url
+    else
+      render :template =>"/shortlinks/404-link", :status => 404
+    end
   end
 
   private
