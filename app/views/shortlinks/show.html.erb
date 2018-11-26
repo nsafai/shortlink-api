@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container margin-top">
   <p>
     <strong>Short URL:</strong>
     <%= @shortlink.short_url %>
@@ -9,6 +9,7 @@
     <%= @shortlink.long_url %>
   </p>
 
-  <%= link_to 'Edit', edit_shortlink_path(@shortlink) %> |
-  <%= link_to 'Back', shortlinks_path %>
+  <%= link_to '← Back', shortlinks_path %> |
+  <%= link_to 'Edit', edit_shortlink_path(@shortlink) %>
+
 </div>
