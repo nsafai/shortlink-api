@@ -35,6 +35,13 @@ class ShortlinksController < ApplicationController
     end
   end
 
+  def destroy
+    @shortlink = Shortlink.find(params[:id])
+    @shortlink.destroy
+
+    redirect_to shortlinks_path
+  end
+
   private
     def shortlink_params
       params.require(:shortlink).permit(:short_url, :long_url)
