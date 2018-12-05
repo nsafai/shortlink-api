@@ -21,7 +21,7 @@ class ShortlinksController < ApplicationController
 
     if @shortlink.save
       redirect_to @shortlink
-    else
+    else # something went when saving, reload new
       render 'new'
     end
   end
@@ -31,7 +31,7 @@ class ShortlinksController < ApplicationController
 
     if @shortlink.update(shortlink_params)
       redirect_to @shortlink
-    else
+    else # something went wrong when updating, reload edit
       render 'edit'
     end
   end
@@ -40,7 +40,7 @@ class ShortlinksController < ApplicationController
     @shortlink = Shortlink.find(params[:id])
     @shortlink.destroy
 
-    redirect_to shortlinks_path
+    redirect_to shortlinks_path # go back to all shortlinks
   end
 
   def redir
