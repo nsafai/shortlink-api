@@ -47,6 +47,7 @@ class ShortlinksController < ApplicationController
     @shortlink = Shortlink.find_by(short_url: params[:short_url])
 
     if @shortlink
+      @shortlink.increment!(:clicks)
       redirect_to @shortlink.long_url
     else
       render :template =>"/shortlinks/404-link", :status => 404

@@ -5,7 +5,8 @@
   <table class="table table-responsive table-hover">
     <tr>
       <th>Short URL</th>
-      <th>Long URL</th>
+      <th>Original URL</th>
+      <th># Clicks</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= shortlink.short_url %></td>
         <td><a href="<%= shortlink.long_url %>"><%= shortlink.long_url %></a></td>
+        <td><%= shortlink.clicks %></td>
         <td><%= link_to 'Show', shortlink_path(shortlink) %></td>
         <td><%= link_to 'Edit', edit_shortlink_path(shortlink) %></td>
         <td><%= link_to 'Delete', shortlink_path(shortlink),
