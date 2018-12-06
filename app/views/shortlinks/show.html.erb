@@ -5,13 +5,18 @@
   </p>
 
   <p>
-    <strong>Long URL:</strong>
+    <strong>Original URL:</strong>
     <%= @shortlink.long_url %>
   </p>
 
   <p>
-    <strong># of clicks:</strong>
+    <strong># Clicks:</strong>
     <%= @shortlink.clicks %>
+  </p>
+
+  <p>
+    <strong>Owner:</strong>
+    <%= @owner.email %>
   </p>
 
   <%= link_to '← Back', shortlinks_path %> |

@@ -6,6 +6,12 @@ class ShortlinksController < ApplicationController
 
   def show
     @shortlink = Shortlink.find(params[:id])
+    if @shortlink.user_id != nil
+      @owner = User.find(@shortlink.user_id)
+    else
+      @owner = User.new()
+      @owner.email = "--"
+    end
   end
 
   def new
@@ -18,9 +24,13 @@ class ShortlinksController < ApplicationController
 
   def create
     @shortlink = Shortlink.new(shortlink_params)
+    if (current_user != nil)
+      @shortlink.user_id = current_user.id
+    end
+
     if @shortlink.save
       redirect_to @shortlink
-    else # something went when saving, reload new
+    else # something went wrong when saving, reload new
       render 'new'
     end
   end
@@ -36,12 +46,13 @@ class ShortlinksController < ApplicationController
   end
 
   def destroy
-    puts(current_user)
-    if (current_user == nil) || (current_user.email != ENV["ADMIN_EMAIL"])
+    @shortlink = Shortlink.find(params[:id])
+    if (current_user == nil) || # nobody logged in
+      (current_user.email != ENV["ADMIN_EMAIL"]) || # user is not admin
+      (current_user.id != @shortlink.user_id) # user did not create shortlink
       redirect_to shortlinks_path, :alert => "Access denied. You can only delete
       a link if you created it while logged in, or if you are an admin."
     else
-      @shortlink = Shortlink.find(params[:id])
       @shortlink.destroy
       redirect_to shortlinks_path # go back to all shortlinks
     end
@@ -60,6 +71,6 @@ class ShortlinksController < ApplicationController
 
   private
     def shortlink_params
-      params.require(:shortlink).permit(:short_url, :long_url)
+      params.require(:shortlink).permit(:short_url, :long_url, :user_id)
     end
 end
