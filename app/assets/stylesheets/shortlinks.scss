@@ -8,12 +8,9 @@ body {
 h1 {
   font-weight: 700;
 }
-.margin-top {
-  margin-top:3em;
-}
 
 .margin-bot {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 /***** TABLE *****/
@@ -24,8 +21,22 @@ h1 {
   color: #bbb;
 }
 
+/***** ALERTS *****/
+// .alert {
+//   margin-top: 20px;
+// }
+
 /***** DESKTOP ONLY *****/
 @media only screen and (min-width: 768px) {
+  
+  body {
+    font-size:18px;
+  }
+
+  .content-container {
+    margin-top:20px;
+  }
+
   .navbar-nav, .navbar-header {
     display: flex;
     align-items: center;
