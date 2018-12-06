@@ -8,15 +8,59 @@ body {
 h1 {
   font-weight: 700;
 }
-
 .margin-top {
-  margin-top:2em;
+  margin-top:3em;
 }
 
 .margin-bot {
   margin-bottom: 1em;
 }
 
+/***** TABLE *****/
+
+
+/***** FOOTER *****/
 .copyright-text {
   color: #bbb;
+}
+
+.footer-div {
+  
+}
+
+/***** DESKTOP ONLY *****/
+@media only screen and (min-width: 768px) {
+  .navbar-nav, .navbar-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    // margin-top to center vertically (should be same margin as cta)
+    margin-top: 10px;
+  }
+
+  .navbar-nav li {
+    // display:none;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .navbar-nav .cta {
+    margin: 15px;
+  }
+
+  .cta {
+    color:white !important;
+    background-color:#337ab7 !important;
+    border-radius:5px;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+  }
+
+  .cta:hover, .cta:active {
+    color:#337ab7 !important;
+    background-color:white !important;
+  }
+
 }

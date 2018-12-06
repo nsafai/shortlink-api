@@ -1,7 +1,9 @@
 <div class="container margin-top">
   <h1>All Shortlinks</h1>
 
-  <%= link_to 'New shortlink', new_shortlink_path, :class=>"btn btn-primary margin-bot" %><br>
+  <%= link_to 'New Link', new_shortlink_path, :class=>"btn btn-primary margin-bot cta" %>
+  <br>
+
   <table class="table table-responsive table-hover">
     <tr>
       <th>Short URL</th>
@@ -17,7 +19,7 @@
         <td><%= shortlink.short_url %></td>
         <td><a href="<%= shortlink.long_url %>"><%= shortlink.long_url %></a></td>
         <td><%= shortlink.clicks %></td>
-        <td><%= link_to 'Show', shortlink_path(shortlink) %></td>
+        <td><%= link_to 'View', shortlink_path(shortlink) %></td>
         <td><%= link_to 'Edit', edit_shortlink_path(shortlink) %></td>
         <td><%= link_to 'Delete', shortlink_path(shortlink),
                 method: :delete,
