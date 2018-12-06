@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # puts('admin email is:')
-    # puts(ENV["ADMIN_EMAIL"]) # showing up blank for some reason
     if current_user.email == ENV["ADMIN_EMAIL"]
       @users = User.all
     else
