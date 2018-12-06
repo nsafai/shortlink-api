@@ -9,6 +9,10 @@ h1 {
   font-weight: 700;
 }
 
+.margin-top {
+  margin-top: 2em;
+}
+
 .margin-bot {
   margin-bottom: 2em;
 }
@@ -28,7 +32,7 @@ h1 {
 
 /***** DESKTOP ONLY *****/
 @media only screen and (min-width: 768px) {
-  
+
   body {
     font-size:18px;
   }
