@@ -28,6 +28,9 @@ class ShortlinksController < ApplicationController
       @shortlink.user_id = current_user.id
     end
 
+    # catch exceptions
+    
+
     if @shortlink.save
       redirect_to @shortlink
     else # something went wrong when saving, reload new
