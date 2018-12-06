@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :users
   root to: 'shortlinks#index'
   resources :shortlinks
-  get '/:short_url', to: 'shortlinks#redir'
+  get '/:short_url', to: 'shortlinks#redir' # keep last so shorturl never overrides
 end
