@@ -37,4 +37,5 @@ gem 'unicorn-rails'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
+gem 'figaro'
 end
