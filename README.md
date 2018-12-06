@@ -7,12 +7,10 @@ A Ruby on Rails API to create custom short-links w/ 2FA
 
 - v0: Can CRUD basic short-links on root domain
 - v1: Auth + view own links
-- v2: View analytics on links (# clicks, country of origin, etc.)
+- v2: View basic analytics on links (# clicks)
+- v2.5: View other analytics demographic data like country of origin, etc.
 - v3: Allow user to send analytics data back to link tracker and view full funnel
 - v4: Integrate with Segment
-
-## Things to fix
-- [ ] password reset link goes to gmail.com/users/password/....
 
 ## Useful Terminal Commands
 1. To reset ENV variables from the terminal: `bundle exec figaro heroku:set -e production`
