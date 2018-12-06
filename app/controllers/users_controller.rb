@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     else
       redirect_to root_path, :alert => "Access denied."
     end
-
   end
 
   def show
