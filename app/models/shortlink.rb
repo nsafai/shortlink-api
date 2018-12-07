@@ -8,6 +8,7 @@ class Shortlink < ApplicationRecord
 
   protected
 
+  # CREDIT TO https://stackoverflow.com/a/7908693/3247102
   def smart_add_url_protocol
     unless self.long_url[/\Ahttp:\/\//] || self.long_url[/\Ahttps:\/\//]
       self.long_url = "http://#{self.long_url}"
