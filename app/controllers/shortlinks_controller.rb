@@ -19,7 +19,16 @@ class ShortlinksController < ApplicationController
   end
 
   def edit
-    @shortlink = Shortlink.find(params[:id])
+    @shortlink = Shortlink.new
+    if (current_user == nil) # nobody logged in
+      redirect_to shortlinks_path, :alert => "Access denied. Please log in."
+    elsif (current_user.email != ENV["ADMIN_EMAIL"]) || # current_user is admin
+      (current_user.id != @shortlink.user_id) # current_user created the link
+      redirect_to shortlinks_path, :alert => "Access denied. You can only delete
+      a link if you created it while logged in, or if you are an admin."
+    else
+      @shortlink = Shortlink.find(params[:id])
+    end
   end
 
   def create
@@ -29,8 +38,6 @@ class ShortlinksController < ApplicationController
     end
 
     # catch exceptions
-    
-
     if @shortlink.save
       redirect_to @shortlink
     else # something went wrong when saving, reload new
@@ -50,9 +57,10 @@ class ShortlinksController < ApplicationController
 
   def destroy
     @shortlink = Shortlink.find(params[:id])
-    if (current_user == nil) || # nobody logged in
-      (current_user.email != ENV["ADMIN_EMAIL"]) || # user is not admin
-      (current_user.id != @shortlink.user_id) # user did not create shortlink
+    if (current_user == nil) # nobody logged in
+      redirect_to shortlinks_path, :alert => "Access denied. Please log in."
+    elsif (current_user.email != ENV["ADMIN_EMAIL"]) || # current_user is admin
+      (current_user.id != @shortlink.user_id) # current_user created the link
       redirect_to shortlinks_path, :alert => "Access denied. You can only delete
       a link if you created it while logged in, or if you are an admin."
     else
