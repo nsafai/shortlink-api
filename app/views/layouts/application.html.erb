@@ -9,6 +9,7 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Custom shortlink generator" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,700,900" rel="stylesheet">
