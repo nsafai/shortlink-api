@@ -15,8 +15,12 @@
   </p>
 
   <p>
-    <strong>Owner:</strong>
-    <%= @owner.email %>
+    <strong>Creator:</strong>
+    <% if @shortlink.user_id? %>
+      <%= @creator.email %>
+    <% else %>
+      N/A
+    <% end %>
   </p>
 
   <%= link_to '← Back', shortlinks_path %> |

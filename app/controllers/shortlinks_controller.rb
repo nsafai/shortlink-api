@@ -6,11 +6,11 @@ class ShortlinksController < ApplicationController
 
   def show
     @shortlink = Shortlink.find(params[:id])
-    if @shortlink.user_id == nil
-      @owner = User.new()
-      @owner.email = "--"
+    if (@shortlink.user_id)
+      @creator = User.find(@shortlink.user_id)
     else
-      @owner = User.find(@shortlink.user_id)
+      @creator = User.new
+      @creator.email = "--"
     end
   end
 
