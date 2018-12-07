@@ -14,14 +14,14 @@
     <%= @shortlink.clicks %>
   </p>
 
-  <p>
+  <!-- <p>
     <strong>Creator:</strong>
     <% if @shortlink.user_id? %>
       <%= @creator.email %>
     <% else %>
       N/A
     <% end %>
-  </p>
+  </p> -->
 
   <%= link_to '← Back', shortlinks_path %> |
   <%= link_to 'Edit', edit_shortlink_path(@shortlink) %>
