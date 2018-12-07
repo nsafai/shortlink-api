@@ -5,11 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Language" content="en_US" />
     <meta name="google" content="notranslate" />
-    <title><%= content_for?(:title) ? yield(:title) : "Shortlinks" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Custom shortlink generator" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "radlinks" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "A rad custom shortlink generator" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= favicon_link_tag %>
+    <%# <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %> %>
+    <%# <%= favicon_link_tag 'favico.png', rel: 'apple-touch-icon', type: 'image/png' %> %>
     <%= csrf_meta_tags %>
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,700,900" rel="stylesheet">
