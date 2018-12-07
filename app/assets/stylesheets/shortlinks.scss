@@ -20,8 +20,6 @@ h1 {
 
 /***** NAVBAR *****/
 .navbar-brand {
-  // font-family: 'Tajawal';
-  // border: 2px solid #9d9d9d;
   font-weight: 500;
   font-size:1.1em;
   color:#e8e8e8 !important;
@@ -41,6 +39,14 @@ h1 {
   color: #bbb;
 }
 
+/***** INDEX *****/
+.table-title-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // flex-grow:
+}
+
 /***** NEW URL *****/
 .orig-url-field {
   width: 100%;
@@ -53,11 +59,6 @@ h1 {
   margin-top:3em;
   margin-bottom:2em;
 }
-
-/***** ALERTS *****/
-// .alert {
-//   margin-top: 20px;
-// }
 
 /***** DESKTOP ONLY *****/
 @media only screen and (min-width: 768px) {
