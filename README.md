@@ -1,4 +1,4 @@
-# Radlink -- a Shortlink-API
+# Radl.ink: a Shortlink-API
 
 ## Summary
 A Ruby on Rails API to create custom short-links w/ Devise authentication & custom authorization
