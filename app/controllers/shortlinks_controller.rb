@@ -15,7 +15,7 @@ class ShortlinksController < ApplicationController
   def edit
     @shortlink = Shortlink.new
 
-    if (current_user == nil) # nobody logged in
+    if current_user.blank? # nobody logged in
       redirect_to shortlinks_path, :alert => "Access denied. Please log in."
     elsif @shortlink.user_id.blank? && (current_user.email != ENV["ADMIN_EMAIL"]) # shortlink was created by a guest user && current_user is not admin
       redirect_to shortlinks_path, :alert => "Access denied. This link was created by a guest user and can only be edited by an admin."
@@ -54,9 +54,9 @@ class ShortlinksController < ApplicationController
 
   def destroy
     @shortlink = Shortlink.find(params[:id])
-    if (current_user == nil) # nobody logged in
+    if current_user.blank? # nobody logged in
       redirect_to shortlinks_path, :alert => "Access denied. Please log in."
-    elsif (@shortlink.user_id == nil) && (current_user.email != ENV["ADMIN_EMAIL"]) # shortlink was created by a guest user && current_user is not admin
+    elsif @shortlink.user_id.blank? && (current_user.email != ENV["ADMIN_EMAIL"]) # shortlink was created by a guest user && current_user is not admin
       redirect_to shortlinks_path, :alert => "Access denied. This link was created by a guest user and can only be deleted by an admin."
     elsif (current_user.id != @shortlink.user_id) # current_user did not create the link
       redirect_to shortlinks_path, :alert => "You can not delete this link. It was created by another user."
