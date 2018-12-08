@@ -37,5 +37,6 @@ gem 'unicorn-rails'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
-gem 'figaro'
+gem 'figaro' # for env files
+gem 'sdoc' # for auto documentation
 end
