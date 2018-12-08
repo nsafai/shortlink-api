@@ -57,95 +57,65 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-Shortlink-API">Shortlink-API</h1>
+      <div id="content"><div id='filecontents'><h1>Shortlink-API</h1>
 
-<h2 id="label-The+Idea">The Idea</h2>
+<h2>The Idea</h2>
 
-<p>A Ruby on Rails API to create custom short-links w/ Devise authentication
-&amp; custom authorization</p>
+<p>A Ruby on Rails API to create custom short-links w/ Devise authentication &amp; custom authorization</p>
 
-<h2 id="label-Milestones">Milestones</h2>
-<ul><li>
-<p>[x] v0: Can CRUD basic short-links on root domain</p>
-</li><li>
-<p>[x] v1: Auth + view own links</p>
-</li><li>
-<p>[x] v2: View basic analytics on links (# clicks)</p>
-</li><li>
-<p>[ ] v2.1: View other analytics demographic data like country of origin,
-etc.</p>
-</li><li>
-<p>[ ] v3: Allow user to send analytics data back to link tracker and view
-full funnel</p>
-</li><li>
-<p>[ ] v4: Integrate with Segment</p>
-</li></ul>
+<h2>Milestones</h2>
 
-<h2 id="label-Useful+Terminal+Commands">Useful Terminal Commands</h2>
-<ol><li>
-<p>To reset ENV variables from the terminal: <code>bundle exec figaro
-heroku:set -e production</code></p>
-</li><li>
-<p>To migrate on prod, use: <code>heroku run db:rake</code> or <code>heroku
-run rails db:migrate</code></p>
-</li><li>
-<p>To re-generate documentation from code, use: <code>yardoc
-&#39;lib/*<strong>/</strong>.rb&#39; &#39;app/*<strong>/</strong>.rb&#39; -
-README.md</code></p>
-</li><li>
-<p>To view the documentation, use <code>yard server</code></p>
-</li></ol>
+<ul>
+<li>[x] v0: Can CRUD basic short-links on root domain</li>
+<li>[x] v1: Auth + view own links</li>
+<li>[x] v2: View basic analytics on links (# clicks)</li>
+<li>[ ] v2.1: View other analytics demographic data like country of origin, etc.</li>
+<li>[ ] v3: Allow user to send analytics data back to link tracker and view full funnel</li>
+<li>[ ] v4: Integrate with Segment</li>
+</ul>
 
-<h2 id="label-Functional+Requirements">Functional Requirements</h2>
-<ul><li>
-<p>[x] At least one nested route or resource.</p>
-</li><li>
-<p>[x] The ability to CREATE, READ, UPDATE, and DELETE the object(s) in your
-API.</p>
-</li><li>
-<p>[x] At least one of each endpoint: GET, POST, PUT, and DELETE.</p>
-</li><li>
-<p>[x] A database persistence layer (e.g. MongoDB)</p>
-</li><li>
-<p>[x] Project contains documentation explaining how to use your API.</p>
-</li><li>
-<p>[ ] Project contains a simple, static single page brochure site that
-explains what the API does and a link to the API&#39;s documentation.</p>
-</li></ul>
+<h2>Useful Terminal Commands</h2>
 
-<h2 id="label-Non-Functional+Requirements">Non-Functional Requirements</h2>
-<ul><li>
-<p>[x] The API must be written using the appropriate application of RESTful
-techniques.</p>
-</li><li>
-<p>[x] The API implementation must follow the MVC pattern.</p>
-</li><li>
-<p>[x] The API must be hosted in a public GitHub repository.</p>
-</li><li>
-<p>[x] The project repository should not expose any secrets!</p>
-</li><li>
-<p>[x] The API must have a discernible theme or serve a distinct purpose. See
-the Examples for well-themed and purposed APIs.</p>
-</li><li>
-<p>[x] The final project must be deployed and fully accessible via the
-internet and callable via any consumer.</p>
-</li><li>
-<p>[ ] The final project must be fully documented.</p>
-</li></ul>
+<ol>
+<li>To reset ENV variables from the terminal: <code>bundle exec figaro heroku:set -e production</code></li>
+<li>To migrate on prod, use: <code>heroku run db:rake</code> or <code>heroku run rails db:migrate</code></li>
+<li>To re-generate documentation from code, use: <code>yardoc &#39;lib/**/*.rb&#39; &#39;app/**/*.rb&#39; - README.md</code></li>
+<li>To view the documentation, use <code>yard server</code></li>
+</ol>
 
-<h3 id="label-Credits">Credits</h3>
-<ul><li>
-<p>Shortlink API &amp; front-end written by Nicolai Safai</p>
-</li><li>
-<p>Credit to Daniel Kehoe @ RailsApps for the convenient starter app w/
-Devise: <a
-href="https://github.com/RailsApps/rails-devise">github.com/RailsApps/rails-devise</a></p>
-</li></ul>
+<h2>Functional Requirements</h2>
+
+<ul>
+<li>[x] At least one nested route or resource.</li>
+<li>[x] The ability to CREATE, READ, UPDATE, and DELETE the object(s) in your API.</li>
+<li>[x] At least one of each endpoint: GET, POST, PUT, and DELETE.</li>
+<li>[x] A database persistence layer (e.g. MongoDB)</li>
+<li>[x] Project contains documentation explaining how to use your API.</li>
+<li>[ ] Project contains a simple, static single page brochure site that explains what the API does and a link to the API&#39;s documentation.</li>
+</ul>
+
+<h2>Non-Functional Requirements</h2>
+
+<ul>
+<li>[x] The API must be written using the appropriate application of RESTful techniques.</li>
+<li>[x] The API implementation must follow the MVC pattern.</li>
+<li>[x] The API must be hosted in a public GitHub repository.</li>
+<li>[x] The project repository should not expose any secrets!</li>
+<li>[x] The API must have a discernible theme or serve a distinct purpose. See the Examples for well-themed and purposed APIs.</li>
+<li>[x] The final project must be deployed and fully accessible via the internet and callable via any consumer.</li>
+<li>[ ] The final project must be fully documented.</li>
+</ul>
+
+<h3>Credits</h3>
+
+<ul>
+<li>Shortlink API &amp; front-end written by Nicolai Safai</li>
+<li>Credit to Daniel Kehoe @ RailsApps for the convenient starter app w/ Devise: <a href="https://github.com/RailsApps/rails-devise">https://github.com/RailsApps/rails-devise</a></li>
+</ul>
 </div></div>
 
       <div id="footer">
-  Generated on Fri Dec  7 21:20:21 2018 by
+  Generated on Fri Dec  7 21:22:30 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>
