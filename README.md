@@ -15,7 +15,8 @@ A Ruby on Rails API to create custom short-links w/ Devise authentication & cust
 ## Useful Terminal Commands
 1. To reset ENV variables from the terminal: `bundle exec figaro heroku:set -e production`
 2. To migrate on prod, use: `heroku run db:rake` or `heroku run rails db:migrate`
-3. To re-generate documentation from code, use: `rails rerdoc`
+3. To re-generate documentation from code, use: `yardoc 'lib/**/*.rb' 'app/**/*.rb' - README.md`
+4. To view the documentation, use `yard server`
 
 ## Functional Requirements
 

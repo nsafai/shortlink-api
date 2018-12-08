@@ -38,5 +38,5 @@ group :development do
   gem 'better_errors'
   gem 'rails_layout'
 gem 'figaro' # for env files
-gem 'sdoc' # for auto documentation
+gem 'yard'
 end
