@@ -14,21 +14,24 @@ class ShortlinksController < ApplicationController
 
   def edit
     @shortlink = Shortlink.new
+
     if (current_user == nil) # nobody logged in
       redirect_to shortlinks_path, :alert => "Access denied. Please log in."
-    elsif (current_user.email != ENV["ADMIN_EMAIL"]) || # current_user is admin
-      (current_user.id != @shortlink.user_id) # current_user created the link
-      redirect_to shortlinks_path, :alert => "Access denied. You can only delete
-      a link if you created it while logged in, or if you are an admin."
-    else
+    elsif (@shortlink.user_id == nil) && (current_user.email != ENV["ADMIN_EMAIL"]) # shortlink was created by a guest user && current_user is not admin
+      redirect_to shortlinks_path, :alert => "Access denied. This link was created by a guest user and can only be edited by an admin."
+    elsif (current_user.id != @shortlink.user_id) # current_user did not create the link
+      redirect_to shortlinks_path, :alert => "You can not edit this link. It was created by another user."
+    else # user is either an admin or they created the link
       @shortlink = Shortlink.find(params[:id])
     end
   end
 
   def create
     @shortlink = Shortlink.new(shortlink_params)
-    if (current_user != nil)
+    begin
       @shortlink.user_id = current_user.id
+    rescue NoMethodError
+      @shortlink.user_id = nil
     end
 
     # catch exceptions
@@ -53,11 +56,11 @@ class ShortlinksController < ApplicationController
     @shortlink = Shortlink.find(params[:id])
     if (current_user == nil) # nobody logged in
       redirect_to shortlinks_path, :alert => "Access denied. Please log in."
-    elsif (current_user.email != ENV["ADMIN_EMAIL"]) || # current_user is admin
-      (current_user.id != @shortlink.user_id) # current_user created the link
-      redirect_to shortlinks_path, :alert => "Access denied. You can only delete
-      a link if you created it while logged in, or if you are an admin."
-    else
+    elsif (@shortlink.user_id == nil) && (current_user.email != ENV["ADMIN_EMAIL"]) # shortlink was created by a guest user && current_user is not admin
+      redirect_to shortlinks_path, :alert => "Access denied. This link was created by a guest user and can only be deleted by an admin."
+    elsif (current_user.id != @shortlink.user_id) # current_user did not create the link
+      redirect_to shortlinks_path, :alert => "You can not delete this link. It was created by another user."
+    else # user is either an admin or they created the link
       @shortlink.destroy
       redirect_to shortlinks_path # go back to all shortlinks
     end
