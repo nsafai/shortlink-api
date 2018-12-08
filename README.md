@@ -30,7 +30,7 @@ You can view documentation here: http://nicolaisafai.com/shortlink-api/
 - [x] At least one of each endpoint: GET, POST, PUT, and DELETE.
 - [x] A database persistence layer (e.g. MongoDB)
 - [x] Project contains documentation explaining how to use your API.
-- [ ] Project contains a simple, static single page brochure site that explains what the API does and a link to the API's documentation.
+- [x] Project contains a simple, static single page brochure site that explains what the API does and a link to the API's documentation.
 
 ## Non-Functional Requirements
 
