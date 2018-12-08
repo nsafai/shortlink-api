@@ -6,6 +6,9 @@ A Ruby on Rails API to create custom short-links w/ Devise authentication & cust
 ## How to use
 Go to http://radl.ink and create your own custom shortlinks. That easy!
 
+## Documentation:
+You can view documentation here: http://nicolaisafai.com/shortlink-api/
+
 ## Milestones
 
 - [x] v0: Can CRUD basic short-links on root domain
@@ -18,8 +21,7 @@ Go to http://radl.ink and create your own custom shortlinks. That easy!
 ## Useful Terminal Commands
 1. To reset ENV variables from the terminal: `bundle exec figaro heroku:set -e production`
 2. To migrate on prod, use: `heroku run db:rake` or `heroku run rails db:migrate`
-3. To re-generate documentation from code, use: `yardoc -o docs 'lib/**/*.rb' 'app/**/*.rb'`
-4. To view the documentation, use `yard server`
+3. To re-generate documentation from code, use: `yardoc -o docs`
 
 ## Functional Requirements
 
