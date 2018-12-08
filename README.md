@@ -1,7 +1,10 @@
-# Shortlink-API
+# Radlink -- a Shortlink-API
 
-## The Idea
+## Summary
 A Ruby on Rails API to create custom short-links w/ Devise authentication & custom authorization
+
+## How to use
+Go to http://radl.ink and create your own custom shortlinks. That easy!
 
 ## Milestones
 
