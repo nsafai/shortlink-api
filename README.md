@@ -32,5 +32,5 @@ You can view documentation here: http://nicolaisafai.com/shortlink-api/
 - Github: https://github.com/nsafai/shortlink-api
 
 ### Credits
+- Thanks to Daniel Kehoe for the convenient starter app w/ Devise: https://github.com/RailsApps/rails-devise
 - Shortlink API & front-end written by Nicolai Safai
-- Credit to Daniel Kehoe @ RailsApps for the convenient starter app w/ Devise: https://github.com/RailsApps/rails-devise
