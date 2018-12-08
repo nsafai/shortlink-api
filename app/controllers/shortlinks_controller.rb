@@ -1,7 +1,7 @@
 class ShortlinksController < ApplicationController
 
   def index
-    @shortlinks = Shortlink.all
+    @shortlinks = Shortlink.order("clicks DESC").all
   end
 
   def show
