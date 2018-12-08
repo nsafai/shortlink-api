@@ -12,4 +12,3 @@ app/controllers/shortlinks_controller.rb f40c9c43bb2559af33ad4da393463b672cacd43
 app/channels/application_cable/channel.rb 54156ee2853cfdea4e3147cdb260776b8d90b646
 app/controllers/application_controller.rb 9aafe028f445706d0662cee5a99929d733137b94
 app/channels/application_cable/connection.rb d50148a662b6d182eb9073a5da4cc4115c697ece
-README.md 5215d3f26476428279dbbc0fdfb6a1c7bb07a834

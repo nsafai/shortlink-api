@@ -39,4 +39,5 @@ group :development do
   gem 'rails_layout'
 gem 'figaro' # for env files
 gem 'yard'
+gem 'yard-ghpages' 
 end

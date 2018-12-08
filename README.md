@@ -15,7 +15,8 @@ A Ruby on Rails API to create custom short-links w/ Devise authentication & cust
 ## Useful Terminal Commands
 1. To reset ENV variables from the terminal: `bundle exec figaro heroku:set -e production`
 2. To migrate on prod, use: `heroku run db:rake` or `heroku run rails db:migrate`
-3. To re-generate documentation from code, use: `yardoc 'lib/**/*.rb' 'app/**/*.rb' - README.md`
+3. To re-generate documentation from code, use: `rake yard:build`
+4. To publish new documentation, `commit with git commit -am 'Update yard docs'` then `rake yard:publish`
 4. To view the documentation, use `yard server`
 
 ## Functional Requirements
@@ -23,8 +24,8 @@ A Ruby on Rails API to create custom short-links w/ Devise authentication & cust
 - [x] At least one nested route or resource.
 - [x] The ability to CREATE, READ, UPDATE, and DELETE the object(s) in your API.
 - [x] At least one of each endpoint: GET, POST, PUT, and DELETE.
-- [ ] A database persistence layer (e.g. MongoDB)
-- [ ] Project contains documentation explaining how to use your API.
+- [x] A database persistence layer (e.g. MongoDB)
+- [x] Project contains documentation explaining how to use your API.
 - [ ] Project contains a simple, static single page brochure site that explains what the API does and a link to the API's documentation.
 
 ## Non-Functional Requirements
